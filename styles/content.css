@@ -1,0 +1,167 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.content > div {
+    position: relative;
+    width: 90%;
+    min-height: 500px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-top: 80px;
+}
+
+.content > div > h3 {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 4em;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamCards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+
+.teamCards .card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.teamCards .card img{
+    width: 200px;
+    height: 300px;
+}
+
+.teamCards .card p {
+    position: absolute;
+    bottom: -50px;
+    padding: 10px 5px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    font-size: 1.2em;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.7);
+    transition: bottom 0.3s;
+}
+
+.teamCards .card img:hover + p{
+    bottom: 0;
+}
+
+.contact p{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.7em;
+    font-weight: 300;
+}
+
+.contactBtn {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2em;
+    font-weight: 300;
+    width: 200px;
+    height: 50px;
+    margin: 20px 0;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contactBtn:hover {
+    background-color: rgb(33, 121, 189);
+}
+
+.location {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    grid-gap: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.galleryItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.galleryItem img .mainHeight{
+    max-height: 100%;
+}
+
+.galleryItem img .mainWidth {
+    max-width: 100%;
+}
+
+.firstItem {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.secondItem {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.thirdItem {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.fourthItem {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.map {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+    background-image: url(../images/mapBackground.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}

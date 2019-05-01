@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css" title="localStyles">
+    <title>TaskManager</title>
+</head>
+
+<body>
+    <header id="pageHeader">
+        <h1 class="logo">TaskManager</h1>
+        <nav>
+            <ul class="mainMenu">
+                <li><a href="">point</a>
+                    <ul class="subMenu">
+                        <li><a href="">point</a>
+                        <li><a href="">point</a>
+                        <li><a href="">point</a>
+                        <li><a href="">point</a>
+                        <li><a href="">point</a>
+                    </ul>
+                </li>
+                <li><a href="">point</a></li>
+                <li><a href="">point</a></li>
+                <li><a href="">point</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="mainSlider" class="slider">
+            <div class="arrow arrow-left" onclick="slideFromLeftToRight()"></div>
+            <div class="arrow arrow-right" onclick="slideFromRightToLeft()"></div>
+            <div class="slide current">
+                <div class="slideCard">
+                    <p class="motoText">Have a great experiance using TaskManager</p>
+                    <a href="/board.html" class="joinBtn">JoinUs</a>
+                </div>
+            </div>
+            <div class="slide default">
+                <div class="slideCard">
+                    <a href="/board.html" class="joinBtn">JoinUs</a>
+                    <p class="motoText">Have a great experiance using TaskManager</p>
+                </div>
+            </div>
+            <div class="slide default">
+                <div class="slideCard">
+                    <p class="motoText">Have a great experiance using TaskManager</p>
+                    <a href="/board.html" class="joinBtn">JoinUs</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <!--<div class="description">
+                <h3>How it works</h3>
+            </div>-->
+            <div class="contact">
+                <h3>Our team</h3>
+                <div class="teamCards">
+                    <div class="card">
+                        <img src="images/pic200x300.bmp" alt="person">
+                        <p>Name Surname</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/pic200x300.bmp" alt="person">
+                        <p>Name Surname</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/pic200x300.bmp" alt="person">
+                        <p>Name Surname</p>
+                    </div>
+                </div>
+                <p>If you have any question you can</p>
+                <span class="contactBtn" onclick="toogleModal('contactInputModal')">Contact Us</span>
+            </div>
+            <div class="location">
+                <h3>Location</h3>
+                <div class="gallery">
+                    <figure class="galleryItem firstItem">
+                        <img src="images/pic90x90.bmp" alt="pic90x90">
+                    </figure>
+                    <figure class="galleryItem secondItem">
+                        <img src="images/pic90x90.bmp" alt="pic90x90">
+                    </figure>
+                    <figure class="galleryItem thirdItem">
+                        <img src="images/pic90x300.bmp" alt="pic90x300">
+                    </figure>
+                    <figure class="galleryItem fourthItem">
+                        <img src="images/pic195x195.bmp" alt="pic195x195">
+                    </figure>
+                </div>
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+        <div id="contactInputModal" class="modal">
+            <div class="window">
+                <h3>Contact us</h3>
+                <span class="toogleModal" onclick="toogleModal('contactInputModal')">x</span>
+                <form>
+                    <input onchange="removeError(this)" type="text" id="catName" name="catName"
+                        placeholder="Your name" />
+                    <input onchange="removeError(this)" type="text" id="taskTitle" name="taskTitle"
+                        placeholder="Your mail" />
+                    <input onchange="removeError(this)" type="text" id="taskDescr" name="taskDescr"
+                        placeholder="Your question" />
+                    <input type="button" onclick="toogleModal('contactInputModal')" value="ADD TASK" />
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Created by Huk Pavlo</p>
+        <div>Links</div>
+    </footer>
+    <script src="scripts/slider.js"></script>
+    <script src="scripts/headerOnScroll.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF63_yh9KhlzLHJRJTqC-ISIV4wpG9ibE&callback=initMap">
+        </script>
+</body>
+
+</html>

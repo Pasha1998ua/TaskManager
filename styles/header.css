@@ -1,0 +1,108 @@
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 100px;
+    z-index: 10;
+    transition: background-color 1s;
+}
+
+.halfTransparentBlackBackground {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-size: 3em;
+    color: inherit;
+    font-weight: 300;
+}
+
+.mainMenu{
+    display: flex;
+    list-style-type: none;
+}
+
+.mainMenu > li{
+    position: relative;
+    border-left: 1px solid rgba(255, 255, 255, 1);
+    border-right: 1px solid rgba(255, 255, 255, 1);
+}
+
+.mainMenu > li > a{
+    text-decoration: none;
+    font-size: 1.8em;
+    padding: 0px 15px;
+}
+
+.mainMenu > li > a:hover {
+    color: rgb(206, 232, 0);
+}
+
+nav ul li:last-child {
+    border-right: 0;
+}
+
+nav ul li:first-child {
+    border-left: 0;
+}
+
+.subMenu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 10px;
+    padding: 20px 5px;
+    transform: translate(-50%,0);
+    min-width: 150px;
+    min-height: 150px;
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 4px 4px 18px -5px rgba(0,0,0,0.5);
+}
+
+.subMenu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 10px 20px;
+    border-color: transparent transparent rgba(255, 255, 255, 0.8) transparent;
+}
+
+.subMenu > li > a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: 300;
+    padding: 5px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.subMenu > li > a:hover {
+    color: rgba(34, 159, 255, 1);
+}
+
+.subMenu > li {
+    width: 80%;
+    border-top: 1px solid rgba(0, 0, 0, 1);
+}
+
+.subMenu > li:first-child {
+    border-top: 0;
+}
+
+.mainMenu > li:hover > .subMenu {
+    display: flex;
+}

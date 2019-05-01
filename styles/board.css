@@ -1,0 +1,90 @@
+.boardHeader {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 70px;
+}
+
+.board {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 30px 30px 30px;
+    overflow-x: auto;
+}
+
+.column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 100%;
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow-y: auto;
+    padding-top: 40px;
+}
+
+.column:first-child {
+    margin-left: 0;
+}
+
+.column h3 {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-size: 2em;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.column .addTask {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    font-size: 3em;
+    font-weight:  300;
+    color:rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.column .addTask:hover {
+    color: rgba(34, 159, 255, 1);
+}
+
+.column .card {
+    position: relative;
+    width: 96%;
+    text-overflow: ellipsis;
+    margin-top: 2%;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.column .card:last-child {
+    margin-bottom: 2%;
+}
+
+.column .card .delTask {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 1.4em;
+    font-weight:  500;
+    color:rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.column .card .delTask:hover {
+    color: rgb(206, 232, 0);;
+}
+
+.hrLine {
+    display: block;
+    margin: 5px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}

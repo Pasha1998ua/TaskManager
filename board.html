@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css" title="localStyles">
+    <title>TaskManager</title>
+</head>
+
+<body>
+    <header class="boardHeader">
+        <h1 class="logo">TaskManager</h1>
+    </header>
+    <main>
+        <div class="board" id="taskBoard">
+            <!--<div data-name="ToDo" class="column">
+                <h3>ToDo</h3><span class="addTask" onclick="toogleModal('taskInputModal&quot')">+</span>
+                <div class="card"><span class="delTask" onclick="remTask(this)">x</span>
+                    <h4>Task</h4><span class="hrLine"></span>
+                    <p>Task description Task description Task description Task description</p>
+                </div>
+                <div class="card"><span class="delTask" onclick="remTask(this)">x</span>
+                    <h4>Task</h4><span class="hrLine"></span>
+                    <p>Task description Task description Task description Task description</p>
+                </div>
+                <div class="card"><span class="delTask" onclick="remTask(this)">x</span>
+                    <h4>Task</h4><span class="hrLine"></span>
+                    <p>Task description Task description Task description Task description</p>
+                </div>
+            </div>-->
+        </div>
+    </main>
+    <div id="taskInputModal" class="modal">
+        <div class="window">
+            <h3>Task input</h3>
+            <span class="toogleModal" onclick="toogleModal('taskInputModal')">x</span>
+            <form>
+                <input onchange="removeError(this)" type="text" id="catName" name="catName"
+                    placeholder="Category name" />
+                <input onchange="removeError(this)" type="text" id="taskTitle" name="taskTitle"
+                    placeholder="Task title" />
+                <input onchange="removeError(this)" type="text" id="taskDescr" name="taskDescr"
+                    placeholder="Task description" />
+                <input type="button" onclick="formTaskInput()" value="ADD TASK" />
+            </form>
+        </div>
+    </div>
+    <script src="scripts/board.js"></script>
+    <script src="scripts/modal.js"></script>
+</body>
+
+</html>
