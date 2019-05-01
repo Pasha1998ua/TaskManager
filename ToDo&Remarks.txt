@@ -1,7 +1,0 @@
-	-Acount
-	--Manager can add,change add delete tasks
-	--User can move tasks
-	-Drag&Drop
-	-Photo galery
-	-LocalStorageUpload
-	-Mobile version
