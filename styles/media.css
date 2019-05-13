@@ -1,0 +1,91 @@
+@media screen and (max-width: 1023px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    header > * {
+        margin: 5px;
+    }
+
+    header > .logo {
+        font-size: 2em;
+    }
+
+    .mainMenu > li > a {
+        font-size: 1.2em;
+    }
+
+    .slideCard {
+        width: 70%;
+        height: 50%;
+    }
+
+    .location > .galery > .line {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        height: 80px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    header > nav {
+        display: none;
+    }
+
+    header > nav > .mainMenu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    header > nav > .mainMenu > li{
+        border: 0;
+        padding: 5px 0;
+    }
+
+    .subMenu {
+        width: 300px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    header > .burgerMenu {
+        display: block;
+    }
+
+    .slider {
+        display: none;
+    }
+
+    .mobileGreet {
+        display: flex;
+    }
+
+    .content > div {
+        padding-top: 40px;
+    }
+
+    .content > div > h3 {
+        font-size: 3em;
+    }
+
+    .location > .galery {
+        display: none;
+    }
+
+    .board > .column {
+        width: 90%;
+        margin: 20px 0;
+        height: 500px;
+    }
+}

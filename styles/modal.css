@@ -55,7 +55,7 @@
     color: rgba(34, 159, 255, 1);
 }
 
-input[type="text"] {
+input[type="text"],input[type="email"] {
 	outline: none;
     display: block;
     width: 90%;

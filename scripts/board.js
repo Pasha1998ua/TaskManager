@@ -1,4 +1,4 @@
-var boardArr = [{
+const reserveBoardArr = [{
     "id": "1",
     "catName": "ToDo",
     "tasks": [{
@@ -40,6 +40,16 @@ var boardArr = [{
     }]
 }];
 
+var boardArr = getDataFromLocalStorage();
+
+function saveDataToLocalStorage(){
+    localStorage.setItem("data", JSON.stringify(boardArr));
+}
+
+function getDataFromLocalStorage(){
+    return JSON.parse(localStorage.getItem("data"));
+}
+
 function addTask(catName, title, description) {
     for (const cat of boardArr) {
         if (cat.catName === catName) {
@@ -58,18 +68,38 @@ function remTask(catId, taskId) {
     }
 }
 
-function moveTask(taskId, catFromName, catToName) {
+function moveTask(taskId, catFromId, catToId) {
     for (const cat of boardArr) {
-        if(cat.catName === catFromName){
+        if(cat.id === catFromId){
             for (const task of cat.tasks) {
                 if(task.id === taskId){
-                    addTask(catToName, task.title, task.description);
-                    cat.tasks = cat.tasks.filter((_) => _.id !== taskId);
-                    renderBoard();
+                    let catName = getCatNameById(catToId);
+                    if(catName !== undefined){
+                        addTask(catName, task.title, task.description);
+                        cat.tasks = cat.tasks.filter((_) => _.id !== taskId);
+                        renderBoard();
+                    }
                 }
             }
         }
     }
+}
+
+function getCatNameById(id){
+    for (const cat of boardArr) {
+        if(cat.id === id){
+            return cat.catName;
+        }
+    }
+}
+
+function isExistCatName(name) {
+    for (const cat of boardArr) {
+        if(cat.catName === name){
+            return true;
+        }
+    }
+    return false;
 }
 
 function idSelector(arr) {
@@ -89,6 +119,7 @@ function idSelector(arr) {
 var board = document.getElementById("taskBoard");
 
 function renderBoard() {
+    saveDataToLocalStorage();
     board.innerHTML = "";
     for (let i = 0; i < boardArr.length; i++) {
         let cat = createCat(boardArr[i].id, boardArr[i].catName);
@@ -116,6 +147,9 @@ function createTask(id,title, description) {
     let delBtn = createNode("span", "x", ["delTask"]);
     delBtn.setAttribute("onclick", 'remTask(this.parentNode.parentNode.dataset.id, this.parentNode.dataset.id)');
     task.appendChild(delBtn);
+    let moveBtn = createNode("span", ">", ["moveTask"]);
+    moveBtn.setAttribute("onclick", 'moveTask(this.parentNode.dataset.id, this.parentNode.parentNode.dataset.id, (parseInt(this.parentNode.parentNode.dataset.id) + 1).toString())');
+    task.appendChild(moveBtn);
     task.appendChild(createNode("h4", title, []));
     task.appendChild(createNode("span", null, ["hrLine"]));
     task.appendChild(createNode("p", description, []));
@@ -138,6 +172,7 @@ function formTaskInput() {
     let flag = true;
     let catName = document.getElementById("catName").value;
     if (catName === "") { document.getElementById("catName").classList.add("inputError"); flag = false;}
+    if (!isExistCatName(catName)) {document.getElementById("catName").classList.add("inputError"); flag = false;}
     let taskTitle = document.getElementById("taskTitle").value;
     if (taskTitle === "") { document.getElementById("taskTitle").classList.add("inputError"); flag = false;}
     let taskDescr = document.getElementById("taskDescr").value;

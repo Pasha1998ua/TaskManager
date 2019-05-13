@@ -33,7 +33,7 @@ function getStyleClass(classesList, className) {
                 return classesList[i];
             }
         } else if(classesList[i].type === 3) {
-            let res = getStyleClass(classesList[i].styleSheet.rules, className);
+            let res = getStyleClass(classesList[i].styleSheet.cssRules, className);
             if(res !== undefined) {
                 return res;
             }
@@ -45,7 +45,7 @@ function getStyleClassList(title){
     let styleShts = document.styleSheets;
     for (let i = 0; i < styleShts.length; i++) {
         if(styleShts[i].title === title) {
-            return styleShts[i].rules;
+            return styleShts[i].cssRules;
         }
     }
 }

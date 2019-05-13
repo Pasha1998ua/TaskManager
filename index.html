@@ -13,20 +13,22 @@
         <h1 class="logo">TaskManager</h1>
         <nav>
             <ul class="mainMenu">
-                <li><a href="">point</a>
+                <li><a href="#">point</a>
                     <ul class="subMenu">
-                        <li><a href="">point</a>
-                        <li><a href="">point</a>
-                        <li><a href="">point</a>
-                        <li><a href="">point</a>
-                        <li><a href="">point</a>
+                        <li><a href="#">point</a>
+                        <li><a href="#">point</a>
+                        <li><a href="#">point</a>
+                        <li><a href="#">point</a>
+                        <li><a href="#">point</a>
                     </ul>
                 </li>
-                <li><a href="">point</a></li>
-                <li><a href="">point</a></li>
-                <li><a href="">point</a></li>
+                <li><a href="#">point</a></li>
+                <li><a href="#">point</a></li>
+                <li><a href="#">point</a></li>
             </ul>
         </nav>
+        <span class="burgerMenu"
+            onclick="document.querySelectorAll('#pageHeader > nav')[0].classList.toggle('displayFlex')">&#9776</span>
     </header>
     <main>
         <div id="mainSlider" class="slider">
@@ -50,6 +52,10 @@
                     <a href="/board.html" class="joinBtn">JoinUs</a>
                 </div>
             </div>
+        </div>
+        <div class="mobileGreet">
+            <p class="motoText">Have a great experiance using TaskManager</p>
+            <a href="/board.html" class="joinBtn">JoinUs</a>
         </div>
         <div class="content">
             <!--<div class="description">
@@ -76,19 +82,27 @@
             </div>
             <div class="location">
                 <h3>Location</h3>
-                <div class="gallery">
-                    <figure class="galleryItem firstItem">
-                        <img src="images/pic90x90.bmp" alt="pic90x90">
-                    </figure>
-                    <figure class="galleryItem secondItem">
-                        <img src="images/pic90x90.bmp" alt="pic90x90">
-                    </figure>
-                    <figure class="galleryItem thirdItem">
-                        <img src="images/pic90x300.bmp" alt="pic90x300">
-                    </figure>
-                    <figure class="galleryItem fourthItem">
-                        <img src="images/pic195x195.bmp" alt="pic195x195">
-                    </figure>
+                <div class="galery">
+                    <div class="line">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                    </div>
+                    <div class="line">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                    </div>
+                    <div class="line">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                    </div>
+                    <div class="line">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                        <img src="images/background.jpg" style="width:100%">
+                    </div>
                 </div>
                 <div id="map" class="map"></div>
             </div>
@@ -98,13 +112,10 @@
                 <h3>Contact us</h3>
                 <span class="toogleModal" onclick="toogleModal('contactInputModal')">x</span>
                 <form>
-                    <input onchange="removeError(this)" type="text" id="catName" name="catName"
-                        placeholder="Your name" />
-                    <input onchange="removeError(this)" type="text" id="taskTitle" name="taskTitle"
-                        placeholder="Your mail" />
-                    <input onchange="removeError(this)" type="text" id="taskDescr" name="taskDescr"
-                        placeholder="Your question" />
-                    <input type="button" onclick="toogleModal('contactInputModal')" value="ADD TASK" />
+                    <input type="text" id="name" name="name" placeholder="Your name" />
+                    <input type="text" id="mail" name="mail" placeholder="Your mail" />
+                    <input type="text" id="msg" name="msg" placeholder="Your question" />
+                    <input type="button" onclick="toogleModal('contactInputModal')" value="CONTACT" />
                 </form>
             </div>
         </div>

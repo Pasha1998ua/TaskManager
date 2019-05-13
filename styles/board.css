@@ -5,7 +5,8 @@
 
 .board {
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     height: 100vh;
     padding: 100px 30px 30px 30px;
@@ -18,15 +19,11 @@
     flex-direction: column;
     align-items: center;
     width: 250px;
-    height: 100%;
-    margin-left: 30px;
+    height: 90%;
+    margin: 20px 30px 0 30px;
     background-color: rgba(255, 255, 255, 0.7);
     overflow-y: auto;
     padding-top: 40px;
-}
-
-.column:first-child {
-    margin-left: 0;
 }
 
 .column h3 {
@@ -68,7 +65,7 @@
     margin-bottom: 2%;
 }
 
-.column .card .delTask {
+.column .card .delTask, .column .card .moveTask {
     position: absolute;
     right: 10px;
     top: 0px;
@@ -79,8 +76,23 @@
     transition: 0.3s;
 }
 
-.column .card .delTask:hover {
-    color: rgb(206, 232, 0);;
+.column .card .moveTask {
+    right: 35px;
+}
+
+.column .card .delTask:hover, .column .card .moveTask:hover {
+    color: rgb(206, 232, 0);
+}
+
+.column .card h4 {
+    width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.column .card p {
+    word-wrap: break-word;
 }
 
 .hrLine {
