@@ -8,6 +8,3 @@ To start up progect you need http-server. In proces of development used: https:/
 	-- Manager can add,change add delete tasks
 	-- User can move tasks
 	- Drag&Drop
-	- Photo galery
-	- LocalStorageUpload
-	- Fix mobile representing
